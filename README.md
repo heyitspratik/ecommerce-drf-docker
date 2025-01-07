@@ -83,11 +83,6 @@ make stop
 
 
 ### 8. Additional Commands
-Rebuild the Docker containers (if needed):
-
-```bash
-make build
-```
 
 Restart the Docker containers (if needed):
 
@@ -95,9 +90,15 @@ Restart the Docker containers (if needed):
 make restart
 ```
 
-To check logs
+To check logs:
 ```bash
 make logs
+```
+
+Rebuild the Docker containers (if needed):
+
+```bash
+make build
 ```
 
 ### Run tests:
