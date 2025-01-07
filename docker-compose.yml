@@ -1,0 +1,39 @@
+version: '3.10'
+
+services:
+  app:
+    container_name: ecommerce_app
+    build:
+      context: .
+    image: ecommerce_app:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgres://db_user:password@db_host/db_name
+      - DJANGO_SECRET_KEY=your_secret_key
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    networks:
+      - app_network
+
+  db:
+    image: postgres:13
+    container_name: ecommerce_db
+    environment:
+      POSTGRES_DB: ecommerce_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: letsdoit
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  db_data:
+    driver: local
