@@ -89,6 +89,17 @@ Rebuild the Docker containers (if needed):
 make build
 ```
 
+Restart the Docker containers (if needed):
+
+```bash
+make restart
+```
+
+To check logs
+```bash
+make logs
+```
+
 ### Run tests:
 
 ```bash
