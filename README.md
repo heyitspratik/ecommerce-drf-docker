@@ -86,7 +86,7 @@ make stop
 Rebuild the Docker containers (if needed):
 
 ```bash
-make rebuild
+make build
 ```
 
 ### Run tests:
